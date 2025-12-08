@@ -27,7 +27,6 @@ rFunction <- function(data) {
 #st_layers("data/output/GPX_data.gpx")
 #gpx <- st_read("data/output/GPX_data.gpx", layer = "waypoints")
 #gpx
-#plot(st_geometry(gpx))
   
   
   
