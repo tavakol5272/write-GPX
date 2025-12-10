@@ -9,9 +9,10 @@ rFunction <- function(data) {
     return(NULL)
   }
   
-  if (st_crs(data)$epsg != 4326) {
-    data <- st_transform(data, 4326)
-  }
+  # if (st_crs(data)$epsg != 4326) {
+  #   data <- st_transform(data, 4326)
+  # }
+  if (!sf::st_is_longlat(data)) data <- sf::st_transform(data, 4326)
 
   data$name <- as.character(mt_track_id(data))
   data$time <- mt_time(data)
