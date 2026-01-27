@@ -14,6 +14,12 @@ This App exports move2 object as GPX waypoints (contains, for each point, the co
 and all additional attributes supported via GPX extensions if they are listed in the default XML name schema under http://www.topografix.com/GPX/1/1/  ),
 and can be viewed and used in common GIS and GPS tools like QGIS, GPX viewers, navigation devices Garmin, Strava, and mapping services.  
 
+### Application scope
+#### Generality of App usability
+This App was developed for any taxonomic group.
+#### Required data properties
+The App should work for any kind of (location) data.
+
 ### Input data
 move2::move2_loc
 
@@ -24,8 +30,14 @@ move2::move2_loc
 `GPX_data.gpx`: GPX file of your input data with major elements "longitude", "latitude", "time" and "name" and additional data attributes as "extensions".
 
 ### Settings 
-no settings
+This App has no user-configurable settings.
+
+### Changes in output data
+The input data remains unchanged.
+
+### Most common errors
+
 
 ### Null or error handling:
 **Data:** If the input data set is `NULL` or has 0 rows, the app logs this and returns the input unchanged.
-
+**CRS / GPX errors:** If CRS transformation or GPX writing fails, the error is logged, no GPX file is created, and the App returns the unmodified input data.
