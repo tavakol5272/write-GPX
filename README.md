@@ -4,15 +4,14 @@ MoveApps
 Github repository: *github.com/movestore/write-GPX*
 
 ## Description
-This App takes movement data and exports all locations as a standard downloadble `.gpx` file using `sf::st_write()` with the GDAL GPX driver.
+This App takes movement data and exports all locations as a standard downloadble `.gpx` file that can be viewed and used in common GIS and GPS tools like QGIS, GPX viewers, navigation devices Garmin, Strava, and mapping services.
 
 ## Documentation
 GPX (the GPS Exchange Format) is a light-weight XML data format for the interchange of GPS data (waypoints, routes, and tracks) between applications and Web services on the Internet.
 GPX is being used by hundreds of software programs and Web services for GPS data exchange, mapping, and geocaching.(more information: http://www.topografix.com )
 
-This App exports move2 object as GPX waypoints (contains, for each point, the coordinates, timestamp, individual ID,
-and all additional attributes supported via GPX extensions if they are listed in the default XML name schema under http://www.topografix.com/GPX/1/1/  ),
-and can be viewed and used in common GIS and GPS tools like QGIS, GPX viewers, navigation devices Garmin, Strava, and mapping services.  
+This App exports the location data as GPX waypoints (contains, for each point, the coordinates, timestamp, individual ID,
+and all additional attributes supported via GPX extensions if they are listed in the default XML name schema under http://www.topografix.com/GPX/1/1/)
 
 ### Application scope
 #### Generality of App usability
@@ -39,5 +38,4 @@ The input data remains unchanged.
 
 
 ### Null or error handling:
-**Data:** If the input data set is `NULL` or has 0 rows, the app logs this and returns the input unchanged.
-**CRS / GPX errors:** If CRS transformation or GPX writing fails, the error is logged, no GPX file is created, and the App returns the unmodified input data.
+**CRS / GPX errors:** If CRS transformation or GPX writing fails, the error can be found in the logs file, no GPX file is created, and the App returns the unmodified input data.
